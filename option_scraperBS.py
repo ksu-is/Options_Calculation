@@ -233,7 +233,7 @@ def scrapeData(startIndex, bs, rf, wait, verbose = True):
 
 
 # Main code
-cols  = ['Stock Price', 'Strike Price', 'Maturity', 'Dividends', 'Volatility', 'Risk-free', 'Call Price']
+cols  = ['Stock Price', 'Strike Price', 'Maturity', 'Volatility', 'Risk-free', 'Call Price']
 results = pd.DataFrame(columns = cols)
 if not path.exists('SNP.csv'): #Only create new file if it does not exist
     results.to_csv('SNP.csv', mode='a', index = False)
