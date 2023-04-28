@@ -153,7 +153,7 @@ def scrapeData(startIndex, bs, rf, wait, verbose = True):
     if startIndex < 0 or startIndex >5:
         raise Exception("Invalid start index!")
         
-    cols  = ['Stock Price', 'Strike Price', 'Maturity', 'Dividends', 'Volatility', 'Risk-free', 'Call Price']
+    cols  = ['Stock Price', 'Strike Price', 'Maturity', 'Volatility', 'Risk-free', 'Call Price']
     results = pd.DataFrame(columns = cols)
     RISK_FREE =  rf
 
