@@ -12,6 +12,9 @@ class BlackScholes:
     #:param D: Dividend 
     #:param sigma: Volatility (Standard deviation) of stock (0.15 = 15%)
     #:param R: Risk-free interest rate (0.05 indicates 5%)
+    ##: Formate Change from (S, K, T, R, sigma)
+
+    
     
 
     @staticmethod
