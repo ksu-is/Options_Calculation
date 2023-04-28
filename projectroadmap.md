@@ -16,4 +16,4 @@
 - Limit the amount of data being scrapped for demo purposes.--------------------- INCOMPLETE
 - Use another set of code to use as a calculor.---------------------------------- INCOMPLETE
 - Re-Formate software to match that of scrapper.--------------------------------- INCOMPLETE
-- Test to see if software runs properly.----------------------------------------- INCOMPLETE
+- Test to see if software runs properly.----------------------------------------- INCOMPLETE 
