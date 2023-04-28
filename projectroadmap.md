@@ -9,11 +9,11 @@
   - Two being a basic calculator that computed the fair value price of either a call or put option within European Contracts. 
 
 # Game Plan
-- Play around with code found on github.----------------------------------------- INCOMPLETE
-- Make sure the file works properly.--------------------------------------------- INCOMPLETE
-- Gain an understanding of what the repository code is doing.-------------------- INCOMPLETE 
-- Make sure scrapper is active.-------------------------------------------------- INCOMPLETE
-- Limit the amount of data being scrapped for demo purposes.--------------------- INCOMPLETE
-- Use another set of code to use as a calculor.---------------------------------- INCOMPLETE
-- Re-Formate software to match that of scrapper.--------------------------------- INCOMPLETE
-- Test to see if software runs properly.----------------------------------------- INCOMPLETE
+- Play around with code found on github.----------------------------------------- DONE
+- Make sure the file works properly.--------------------------------------------- DONE
+- Gain an understanding of what the repository code is doing.-------------------- DONE
+- Make sure scrapper is active.-------------------------------------------------- DONE
+- Limit the amount of data being scrapped for demo purposes.--------------------- DONE
+- Use another set of code to use as a calculor.---------------------------------- DONE
+- Re-Formate software to match that of scrapper.--------------------------------- DONE
+- Test to see if software runs properly.----------------------------------------- DONE
