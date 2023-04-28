@@ -81,22 +81,12 @@ def getStockData(ticker):
     # Extract ask price by parsing out other data
     x = stock_price.find('x')
     stock_price = float(stock_price[0:x].replace(",","")) # delete any comma to cast to float
-    
-    # Get dividend yield
-    rows = tables[1].find_all('tr') 
-    div_yield = rows[5].find_all('td')[1].text.strip()  # Item that returns ask yield (6th row in a table)
-    # Extract yield by parsing out other data
-    x = div_yield.find('(')
-    if "N" not in div_yield[x+1:-2]: # Only set dividend if not 'N/A'
-        div_yield = float(div_yield[x+1:-2])/100
-    else: 
-        div_yield = 0
-        
+           
     # Get volatility
     ticker = ticker.replace("-",".") #BRK.B exception
     volatility = getStockVol(ticker)
     
-    return stock_price, div_yield, volatility
+    return stock_price, volatility
 
 
 def getDates(url):
@@ -160,10 +150,10 @@ def scrapeData(startIndex, bs, rf, wait, verbose = True):
         verbose    - boolean that determines if you want output to be printed
         wait       - wait period between page requests
     """
-    if startIndex < 0 or startIndex >5:
+    if startIndex < 0 or startIndex > 499:
         raise Exception("Invalid start index!")
         
-    cols  = ['Stock Price', 'Strike Price', 'Maturity', 'Dividends', 'Volatility', 'Risk-free', 'Call Price']
+    cols  = ['Stock Price', 'Strike Price', 'Maturity', 'Volatility', 'Risk-free', 'Call Price']
     results = pd.DataFrame(columns = cols)
     RISK_FREE =  rf
 
@@ -204,7 +194,6 @@ def scrapeData(startIndex, bs, rf, wait, verbose = True):
         frame['Strike Price'] = strikes
         frame['Call Price'] = prices
         frame['Stock Price'] = stock_price
-        frame['Dividends'] = div_yield
         frame['Volatility'] = volatility
         frame['Risk-free'] = RISK_FREE
         frame['Maturity'] = maturity
@@ -226,7 +215,6 @@ def scrapeData(startIndex, bs, rf, wait, verbose = True):
             frame['Strike Price'] = strikes
             frame['Call Price'] =  call_prices
             frame['Stock Price'] = stock_price
-            frame['Dividends'] = div_yield
             frame['Volatility'] = volatility
             frame['Risk-free'] = RISK_FREE
             frame['Maturity'] = maturity
@@ -245,7 +233,7 @@ def scrapeData(startIndex, bs, rf, wait, verbose = True):
 
 
 # Main code
-cols  = ['Stock Price', 'Strike Price', 'Maturity', 'Dividends', 'Volatility', 'Risk-free', 'Call Price']
+cols  = ['Stock Price', 'Strike Price', 'Maturity', 'Volatility', 'Risk-free', 'Call Price']
 results = pd.DataFrame(columns = cols)
 if not path.exists('SNP.csv'): #Only create new file if it does not exist
     results.to_csv('SNP.csv', mode='a', index = False)
