@@ -150,7 +150,7 @@ def scrapeData(startIndex, bs, rf, wait, verbose = True):
         verbose    - boolean that determines if you want output to be printed
         wait       - wait period between page requests
     """
-    if startIndex < 0 or startIndex >5:
+    if startIndex < 0 or startIndex > 499:
         raise Exception("Invalid start index!")
         
     cols  = ['Stock Price', 'Strike Price', 'Maturity', 'Volatility', 'Risk-free', 'Call Price']
